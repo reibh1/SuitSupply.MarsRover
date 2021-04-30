@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SuitSupply.MarsRover.Exceptions;
 using SuitSupply.MarsRover.Types;
 using SuitSupply.MarsRover.WebApi.Extensions;
 using PositionStruct = SuitSupply.MarsRover.Types.Position;
@@ -34,9 +35,16 @@ namespace SuitSupply.MarsRover.WebApi.Controllers
         {
             var position = new PositionStruct { Coordinate = new Coordinate(x, y), Direction = direction.ToDirection() };
 
-            var finalPosition = Hover.BatchMove(position, commandSequence, obstacleSequence);
+            try
+            {
+                var finalPosition = Hover.BatchMove(position, commandSequence, obstacleSequence);
 
-            return Ok(finalPosition.ToPositionModel());
+                return Ok(finalPosition.ToPositionModel());
+            }
+            catch (CollisionException e)
+            {
+                return Ok(e.Message);
+            }
         }
     }
 }
