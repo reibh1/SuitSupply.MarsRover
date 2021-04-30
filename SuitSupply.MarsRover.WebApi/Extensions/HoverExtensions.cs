@@ -12,7 +12,7 @@ namespace SuitSupply.MarsRover.WebApi.Extensions
             return new Position
             {
                 Coordinate = new Coordinate(position.Coordinate.X, position.Coordinate.Y),
-                DirectionEnum = position.Direction
+                Direction = position.Direction
             };
         }
 
