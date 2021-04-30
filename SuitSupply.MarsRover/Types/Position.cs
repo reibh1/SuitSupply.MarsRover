@@ -27,7 +27,6 @@
                 X = position.Coordinate.X + (!position.Direction.IsVertical() ? 1 * invert : 0),
                 Y = position.Coordinate.Y + (position.Direction.IsVertical() ? 1 * invert: 0)
             };
-
         }
     }
 }
