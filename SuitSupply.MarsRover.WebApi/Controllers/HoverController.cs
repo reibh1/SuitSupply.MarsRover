@@ -45,6 +45,10 @@ namespace SuitSupply.MarsRover.WebApi.Controllers
             {
                 return Ok(e.Message);
             }
+            catch (InvalidObstacleListException e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }
