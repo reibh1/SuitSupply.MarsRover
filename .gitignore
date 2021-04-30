@@ -1,0 +1,7 @@
+﻿.vs
+SuitSupply.MarsRover/bin
+SuitSupply.MarsRover/obj
+SuitSupply.MarsRover.Test/obj
+SuitSupply.MarsRover.Console/obj
+SuitSupply.MarsRover.WebApi/bin
+SuitSupply.MarsRover.WebApi/obj
