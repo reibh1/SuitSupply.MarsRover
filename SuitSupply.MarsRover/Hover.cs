@@ -21,7 +21,7 @@ namespace SuitSupply.MarsRover
 
         private static bool IsEmpty(Queue<char> queue) => queue.Count == 0;
 
-        private static Queue<char> ToQueue(string commandSequence) => new Queue<char>(commandSequence.ToCharArray());
+        private static Queue<char> ToQueue(string commandSequence) => new Queue<char>((commandSequence ?? "").ToCharArray());
 
         public static List<Coordinate> ToCoordinateList(string obstacleSequence)
         {
